@@ -307,7 +307,7 @@ void SipRequestFirstLine::parseVersion()
 	verPos++;
 
 	int endOfVerPos = 0;
-	while (((verPos+endOfVerPos)[0] != '\r') && ((verPos+endOfVerPos)[0] != '\n'))
+	while (((verPos+endOfVerPos)[0] != '\r') && ((verPos+endOfVerPos)[0] != '\n') && endOfVerPos < strlen(verPos) -1)
 		endOfVerPos++;
 
 	m_Version = std::string(verPos, endOfVerPos);
